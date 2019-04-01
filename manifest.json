@@ -1,0 +1,27 @@
+{
+	"name": "Get short links",
+	"version": "1.0",
+	"description": "Get Short links with bitly",
+	"permissions": ["activeTab","declarativeContent","storage"],
+	"background": {
+		"persistent": true,
+		"scripts": [
+			"js/background.js"
+		]
+	},
+	"browser_action": {
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://bitly.com/"],
+			"js":["js/jquery.min.js"],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": [
+		"temp/*.*"
+	],
+	"icons": {
+	},
+	"manifest_version": 2
+}
